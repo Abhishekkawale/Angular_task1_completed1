@@ -1,0 +1,32 @@
+<main>
+  <h1>{{ title }}</h1>
+  <button (click)="fetchData()">Show Data</button>
+  
+  <!-- Loading indicator -->
+  <!-- <div *ngIf="loading">Loading...</div> -->
+  
+  <!-- table -->
+  <table *ngIf="!loading && data && data.length > 0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Major</th>
+        <th>Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.age }}</td>
+        <td>{{ item.major }}</td>
+        <td>{{ item.role }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <!-- Message when no data is available -->
+  <!-- <div *ngIf="!loading && data.length === 0">No data available.</div> -->
+</main>
